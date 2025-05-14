@@ -1,14 +1,43 @@
+@layer base {
+  .search > button {
+    background-color: var(--accent);
+    color: #fff;
+    border-radius: var(--radius);
+    width: var(--btn-width);
+    height: var(--btn-height);
+  }
+}
+
 @layer layout {
   .search {
     --radius: 0.9375rem;
+    --mb: 1rem;
 
-    border: 1px solid black;
+    background-color: var(--card-bg-color);
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    border-radius: var(--radius);
+    align-items: center;
+    margin-bottom: var(--mb);
+    padding: 1rem 0;
+
     display: flex;
     align-items: center;
   }
-  
+
+  .search > * {
+    margin-left: var(--ml, 1rem);
+    margin-right: var(--mr, none);
+  }
+
+  .search > input {
+    --ml: 0.5rem;
+  }
+
   .search > button {
     --radius: 0.625rem;
-    --bg-color: var(--accent);
+    --ml: auto;
+    --mr: 0.4rem;
+    --btn-width: 5.25rem;
+    --btn-height: 2.875rem;
   }
 }
