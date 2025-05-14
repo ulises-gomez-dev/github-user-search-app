@@ -1,0 +1,48 @@
+@layer layout {
+  .links {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .links > * {
+    background-repeat: no-repeat;
+    background-image: var(--img-url);
+    background-position: left center;
+    padding-left: 2rem;
+    order: var(--link-order, 0);
+  }
+
+  .links > :nth-child(1) {
+    --img-url: url(../assets/icon-location.svg);
+  }
+  .links > :nth-child(2) {
+    --img-url: url(../assets/icon-website.svg);
+  }
+
+  .links > :nth-child(3) {
+    --img-url: url(../assets/icon-twitter.svg);
+  }
+
+  .links > :nth-child(4) {
+    --img-url: url(../assets/icon-company.svg);
+  }
+
+  @media (width > 42.667rem) {
+    .links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .links > :nth-child(1) {
+      --link-order: 1;
+    }
+    .links > :nth-child(2) {
+      --link-order: 3;
+    }
+    .links > :nth-child(3) {
+      --link-order: 2;
+    }
+    .links > :nth-child(4) {
+      --link-order: 4;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@layer layout {
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+
+    background: var(--bg-color);
+    border-radius: var(--card-radius);
+    padding: 1rem;
+  }
+  .stats > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

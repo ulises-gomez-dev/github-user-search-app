@@ -1,0 +1,23 @@
+@layer layout {
+  .title,
+  .themeToggle {
+    display: var(--title-layout);
+    justify-content: var(--main-axis-alignment);
+    align-items: var(--cross-axis-alignment);
+    gap: var(--title-spacing);
+  }
+
+  .title {
+    --title-layout: flex;
+    --main-axis-alignment: space-between;
+    --cross-axis-alignment: center;
+    --title-spacing: 7.5625rem;
+
+    margin-bottom: 2.25rem;
+  }
+
+  .themeToggle {
+    --title-layout: inline-flex;
+    --title-spacing: 1rem;
+  }
+}

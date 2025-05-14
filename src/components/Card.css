@@ -1,0 +1,89 @@
+@layer layout {
+  .card {
+    --gap-horizontal: 2rem;
+    --gap-vertical: 1rem;
+    --img-size: 4.375rem;
+    --card-pd: 2rem 1.5rem 3rem 1.5rem;
+
+    background-color: var(--card-bg-color);
+    border-radius: var(--card-radius);
+    padding: var(--card-pd);
+
+    display: grid;
+    grid-template-areas:
+      "img name"
+      "bio bio";
+    grid-template-columns: var(--img-size) auto;
+    gap: var(--gap-horizontal) var(--gap-vertical);
+  }
+
+  .card > :nth-child(1) {
+    grid-area: img;
+    width: var(--img-size);
+
+    img {
+      border-radius: 50%;
+      width: var(--img-size);
+      height: var(--img-size);
+    }
+  }
+
+  .card > :nth-child(2) {
+    grid-area: name;
+
+    h4 {
+      color: var(--accent);
+    }
+  }
+
+  .card > :nth-child(3) {
+    grid-area: bio;
+
+    p {
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  @media (width > 42.667rem) {
+    .card {
+      --gap-vertical: 2.5rem;
+      --img-size: 7.3125rem;
+    }
+  }
+
+  @media (width > 42.667rem) and (width < 56.833rem) {
+    .card {
+      --card-pd: 2.5rem;
+    }
+  }
+
+  @media (width > 56.889rem) {
+    .card {
+      --card-pd: 3rem;
+      --gap-horizontal: 1.25rem;
+
+      grid-template-areas:
+        "img name"
+        "img bio";
+    }
+
+    .card > :nth-child(2) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      h2 {
+        order: 1;
+      }
+
+      h4 {
+        order: 3;
+      }
+
+      p {
+        order: 2;
+        text-align: end;
+      }
+    }
+  }
+}

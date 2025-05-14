@@ -1,13 +1,43 @@
+:root[data-theme="light"] {
+  --bg-color: hsl(227, 100%, 98%); /* #F6F8FF */
+  --text-color: hsl(217, 35%, 45%); /* #4B6A9B */
+  --heading-text-color: hsl(217, 21%, 21%); /* #2B3442 */
+  --card-bg-color: hsl(0, 0%, 100%); /* #FEFEFE */
+}
+
+:root[data-theme="dark"] {
+  --bg-color: hsl(220, 40%, 13%);
+  --card-bg-color: hsl(222, 41%, 20%);
+}
+
 :root {
-  --background: hsl(227, 100%, 98%);
+  --accent: hsl(212, 100%, 50%); /* #0079FF */
+
+  --card-radius: 0.9375rem;
 }
 
-[theme="dark"] {
-  --background: hsl(222, 41%, 20%);
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    background: none;
+  }
+
+  ul {
+    list-style-type: none;
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Space Mono", monospace;
+@layer base {
+  html {
+    font-family: "Space Mono", monospace;
+  }
+
+  body {
+    background: var(--bg-color);
+  }
 }

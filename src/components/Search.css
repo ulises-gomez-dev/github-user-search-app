@@ -1,0 +1,14 @@
+@layer layout {
+  .search {
+    --radius: 0.9375rem;
+
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search > button {
+    --radius: 0.625rem;
+    --bg-color: var(--accent);
+  }
+}
