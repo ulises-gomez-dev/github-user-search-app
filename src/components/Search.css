@@ -5,6 +5,24 @@
     border-radius: var(--radius);
     width: var(--btn-width);
     height: var(--btn-height);
+    cursor: pointer;
+  }
+
+  .search > input {
+    width: 70%;
+    caret-color: var(--accent);
+  }
+
+  .search > input::placeholder {
+    font-family: "Space Mono";
+    font-size: var(--fs, 0.8125rem);
+    line-height: 1.5625rem;
+  }
+
+  @media (width > 42.667rem) {
+    .search > input::placeholder {
+      --fs: 1.125rem;
+    }
   }
 }
 
@@ -31,6 +49,7 @@
 
   .search > input {
     --ml: 0.5rem;
+    --mr: 0.5rem;
   }
 
   .search > button {

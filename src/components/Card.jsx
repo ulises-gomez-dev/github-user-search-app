@@ -36,8 +36,8 @@ function Card({ info }) {
       </div>
 
       <header>
-        <h2>{info["name"]}</h2>
-        <h4>{`@${info["login"]}`}</h4>
+        <h1>{info["name"]}</h1>
+        <h3>{`@${info["login"]}`}</h3>
         <p>{formattedDate}</p>
       </header>
 

@@ -31,7 +31,7 @@
   .card > :nth-child(2) {
     grid-area: name;
 
-    h4 {
+    h3 {
       color: var(--accent);
     }
   }
@@ -51,12 +51,14 @@
     }
   }
 
+  /* Tablet */
   @media (width > 42.667rem) and (width < 56.833rem) {
     .card {
       --card-pd: 2.5rem;
     }
   }
 
+  /* Desktop */
   @media (width > 56.889rem) {
     .card {
       --card-pd: 3rem;
@@ -72,17 +74,18 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
 
-      h2 {
+      :nth-child(1) {
         order: 1;
       }
 
-      h4 {
+      :nth-child(2) {
         order: 3;
       }
 
-      p {
+      :nth-child(3) {
         order: 2;
         text-align: end;
+        align-self: center;
       }
     }
   }

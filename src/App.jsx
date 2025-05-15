@@ -5,7 +5,13 @@ import Card from "./components/Card";
 import "./App.css";
 
 function App() {
-  document.documentElement.setAttribute("data-theme", "light");
+  const [themeToggle, setToggleTheme] = useState("light");
+
+  document.documentElement.setAttribute("data-theme", themeToggle);
+
+  const toggleTheme = () => {
+    setToggleTheme(themeToggle === "light" ? "dark" : "light");
+  };
 
   const search = (formData) => {
     const query = formData.get("query");
@@ -24,7 +30,7 @@ function App() {
 
   return (
     <div className="devfinder">
-      <Title />
+      <Title toggleTheme={toggleTheme} />
       <Search handleSearch={search} />
       <Card info={info} />
     </div>

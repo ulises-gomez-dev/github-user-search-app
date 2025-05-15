@@ -8,6 +8,7 @@
 :root[data-theme="dark"] {
   --bg-color: hsl(220, 40%, 13%);
   --card-bg-color: hsl(222, 41%, 20%);
+  --heading-text-color: hsl(0, 0%, 100%);
 }
 
 :root {
@@ -30,6 +31,10 @@
   ul {
     list-style-type: none;
   }
+
+  input {
+    all: unset;
+  }
 }
 
 @layer base {
@@ -39,5 +44,39 @@
 
   body {
     background: var(--bg-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    font-size: var("--size");
+    font-style: var("--style", normal);
+    font-weight: var("--weight", 400);
+    line-height: var("--line-height", normal);
+  }
+
+  h1 {
+    --size: 1.625rem;
+    --weight: 700;
+  }
+
+  h2 {
+    --size: 1.375rem;
+    --weight: 700;
+  }
+
+  h3 {
+    --size: 1rem;
+  }
+
+  h4 {
+    --size: 0.8125rem;
+  }
+
+  p {
+    --size: 0.9375rem;
+    --line-height: 1.5625rem;
   }
 }
